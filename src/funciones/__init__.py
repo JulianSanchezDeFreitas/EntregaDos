@@ -19,21 +19,3 @@ def inicializar_diccionario (dic_a, ronda):
     return dic_a
     
     
-def actualizar_diccionario(dic_a, ronda):
-    """ Esta funcion actualiza mi tabla/ diccionario por ronda""" # asigno de la tabla principal los valores correspondientes a mi tabla nueva
-    mvp_ronda = decidir_mvp(ronda)
-    for jugador ,stats in ronda.items():
-        dic_a[jugador]["kills"] += stats["kills"]
-        dic_a[jugador]["assists"] += stats["assists"]
-        if mvp_ronda == jugador:
-            dic_a[jugador]["MVPs"] +=1
-        if stats["deaths"]==True:
-            dic_a[jugador]["deaths"] +=1
-        dic_a[jugador]["puntajes"] += calcular_puntaje(stats)
-     # agregar una forma de ordenar la lista   
-
-def imprimir_ronda(diccionario):
-    """ Esta funcion imprime una ronda de un diccionario"""
-    print(f"Jugador    | Asesinatos       | Asistencias     | Muertes     | MVPs       | Puntaje   ")
-    for nombre in diccionario.items():
-        print(f"{nombre[0]}   |         {nombre[1]["kills"]}     |          {nombre[1]["assists"]}      |       {nombre[1]["deaths"]}        |      {nombre[1]["MVPs"]}       |         {nombre[1]["puntajes"]}")
