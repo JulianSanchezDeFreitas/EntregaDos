@@ -10,4 +10,4 @@ def actualizar_diccionario(dic_a, ronda):
         if stats["deaths"]==True:
             dic_a[jugador]["deaths"] +=1
         dic_a[jugador]["puntajes"] += calcular_puntaje(stats)
-     # agregar una forma de ordenar la lista   
+ 
